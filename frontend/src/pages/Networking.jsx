@@ -46,7 +46,7 @@ export default function Networking() {
     const fetchDelegates = async () => {
         try {
             const { data } = await axios.get(
-                "http://localhost:5000/api/delegate/approved",
+                "https://nexus-summit-link.onrender.com/api/delegate/approved",
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );
             setDelegates(data);
@@ -84,7 +84,7 @@ export default function Networking() {
 
         try {
             const { data } = await axios.post(
-                "http://localhost:5000/api/connection/send",
+                "https://nexus-summit-link.onrender.com/api/connection/send",
                 { receiverId },
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );

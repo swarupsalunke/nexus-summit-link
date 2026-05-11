@@ -34,7 +34,7 @@ export default function Register() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://nexus-summit-link.onrender.com/api/auth/register",
         form
       );
       console.log(data);

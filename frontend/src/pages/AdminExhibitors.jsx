@@ -18,7 +18,7 @@
 //     try {
 
 //       const { data } = await axios.get(
-//         "http://localhost:5000/api/exhibitor",
+//         "https://nexus-summit-link.onrender.com/api/exhibitor",
 //         {
 //           headers: {
 //             Authorization: `Bearer ${user.token}`
@@ -49,7 +49,7 @@
 //     try {
 
 //       await axios.put(
-//         `http://localhost:5000/api/exhibitor/${id}`,
+//         `https://nexus-summit-link.onrender.com/api/exhibitor/${id}`,
 //         { status },
 //         {
 //           headers: {

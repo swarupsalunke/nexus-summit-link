@@ -34,7 +34,7 @@
 //     try {
 
 //       const { data } = await axios.get(
-//         "http://localhost:5000/api/delegate",
+//         "https://nexus-summit-link.onrender.com/api/delegate",
 //         {
 //           headers: {
 //             Authorization: `Bearer ${user.token}`
@@ -88,7 +88,7 @@
 //     try {
 
 //       await axios.put(
-//         `http://localhost:5000/api/delegate/${id}`,
+//         `https://nexus-summit-link.onrender.com/api/delegate/${id}`,
 //         { status },
 //         {
 //           headers: {

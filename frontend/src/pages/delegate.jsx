@@ -28,7 +28,7 @@ export default function Delegate() {
   const fetchStatus = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/delegate/me",
+        "https://nexus-summit-link.onrender.com/api/delegate/me",
         { headers: authHeader }
       );
       setStatus(data.status);
@@ -60,7 +60,7 @@ export default function Delegate() {
 
     setSubmitting(true);
     try {
-      await axios.post("http://localhost:5000/api/delegate", form, {
+      await axios.post("https://nexus-summit-link.onrender.com/api/delegate", form, {
         headers: authHeader,
       });
 

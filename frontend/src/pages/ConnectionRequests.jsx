@@ -15,7 +15,7 @@ export default function ConnectionRequests() {
   const fetchRequests = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/connection/my-requests",
+        "https://nexus-summit-link.onrender.com/api/connection/my-requests",
         { headers: authHeader }
       );
       setRequests(data);
@@ -37,7 +37,7 @@ export default function ConnectionRequests() {
     );
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/connection/${id}`,
+        `https://nexus-summit-link.onrender.com/api/connection/${id}`,
         { status },
         { headers: authHeader }
       );

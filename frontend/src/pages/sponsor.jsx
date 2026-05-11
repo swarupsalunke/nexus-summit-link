@@ -94,7 +94,7 @@ export default function Sponsor() {
       const amount = selectedTier.price;
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/payment/create-order",
+        "https://nexus-summit-link.onrender.com/api/payment/create-order",
         { amount, packageType: form.interest, role: "sponsor" },
         { headers: authHeader }
       );
@@ -113,12 +113,12 @@ export default function Sponsor() {
           const verifyId = toast.loading("Verifying payment...");
           try {
             const verify = await axios.post(
-              "http://localhost:5000/api/payment/verify-payment",
+              "https://nexus-summit-link.onrender.com/api/payment/verify-payment",
               response,
               { headers: authHeader }
             );
             if (verify.data.success) {
-              await axios.post("http://localhost:5000/api/sponsor", form, { headers: authHeader });
+              await axios.post("https://nexus-summit-link.onrender.com/api/sponsor", form, { headers: authHeader });
               toast.success("Sponsorship confirmed!", { id: verifyId });
               navigate("/payment-success");
               setForm({ company: "", interest: "", budget: "", message: "" });
