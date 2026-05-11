@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Delegate from "./pages/Delegate";
-import Exhibitor from "./pages/Exhibitor";
-import Sponsor from "./pages/Sponsor";
-import Event from "./pages/Event";
+import Delegate from "./pages/delegate";
+import Exhibitor from "./pages/exhibitor";
+import Sponsor from "./pages/sponsor";
+import Event from "./pages/event";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -53,8 +53,8 @@ function App() {
           path="/"
           element={
             user
-              ? <Navigate to="/home" />
-              : <Navigate to="/login" />
+              ? <Navigate to="/Home" />
+              : <Navigate to="/Login" />
           }
         />
 
@@ -63,20 +63,20 @@ function App() {
         {/* ================================================== */}
 
         <Route
-          path="/login"
+          path="/Login"
           element={
             !user
               ? <Login />
-              : <Navigate to="/home" />
+              : <Navigate to="/Home" />
           }
         />
 
         <Route
-          path="/register"
+          path="/Register"
           element={
             !user
               ? <Register />
-              : <Navigate to="/home" />
+              : <Navigate to="/Home" />
           }
         />
 
@@ -85,7 +85,7 @@ function App() {
         {/* ================================================== */}
 
         <Route
-          path="/home"
+          path="/Home"
           element={
             <ProtectedRoute>
               <Home />
@@ -97,7 +97,7 @@ function App() {
           path="/delegate"
           element={
             <ProtectedRoute>
-              <Delegate />
+              <delegate />
             </ProtectedRoute>
           }
         />
@@ -106,7 +106,7 @@ function App() {
           path="/exhibitor"
           element={
             <ProtectedRoute>
-              <Exhibitor />
+              <exhibitor />
             </ProtectedRoute>
           }
         />
@@ -115,7 +115,7 @@ function App() {
           path="/sponsor"
           element={
             <ProtectedRoute>
-              <Sponsor />
+              <sponsor />
             </ProtectedRoute>
           }
         />
@@ -124,13 +124,13 @@ function App() {
           path="/event"
           element={
             <ProtectedRoute>
-              <Event />
+              <event />
             </ProtectedRoute>
           }
         />
 
         <Route
-          path="/networking"
+          path="/Networking"
           element={
             <ProtectedRoute>
               <Networking />
