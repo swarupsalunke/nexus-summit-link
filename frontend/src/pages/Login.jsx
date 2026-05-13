@@ -30,7 +30,7 @@ export default function Login() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://nexus-summit-link.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         form
       );
 

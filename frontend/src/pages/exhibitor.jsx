@@ -93,7 +93,7 @@ export default function Exhibitor() {
       const amount = selectedPkg.price;
 
       const { data } = await axios.post(
-        "https://nexus-summit-link.onrender.com/api/payment/create-order",
+        "http://localhost:5000/api/payment/create-order",
         { amount, packageType: form.package, role: "exhibitor" },
         { headers: authHeader }
       );
@@ -112,13 +112,13 @@ export default function Exhibitor() {
           const verifyId = toast.loading("Verifying payment...");
           try {
             const verify = await axios.post(
-              "https://nexus-summit-link.onrender.com/api/payment/verify-payment",
+              "http://localhost:5000/api/payment/verify-payment",
               response,
               { headers: authHeader }
             );
 
             if (verify.data.success) {
-              await axios.post("https://nexus-summit-link.onrender.com/api/exhibitor", form, {
+              await axios.post("http://localhost:5000/api/exhibitor", form, {
                 headers: authHeader,
               });
               toast.success("Registration successful!", { id: verifyId });

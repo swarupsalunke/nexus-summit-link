@@ -30,10 +30,10 @@ export default function AdminDashboard() {
     try {
       const [delegateRes, exhibitorRes, sponsorRes, paymentRes] =
         await Promise.all([
-          axios.get("https://nexus-summit-link.onrender.com/api/delegate",     { headers: authHeader }),
-          axios.get("https://nexus-summit-link.onrender.com/api/exhibitor",    { headers: authHeader }),
-          axios.get("https://nexus-summit-link.onrender.com/api/sponsor",      { headers: authHeader }),
-          axios.get("https://nexus-summit-link.onrender.com/api/payment/stats",{ headers: authHeader }),
+          axios.get("http://localhost:5000/api/delegate",     { headers: authHeader }),
+          axios.get("http://localhost:5000/api/exhibitor",    { headers: authHeader }),
+          axios.get("http://localhost:5000/api/sponsor",      { headers: authHeader }),
+          axios.get("http://localhost:5000/api/payment/stats",{ headers: authHeader }),
         ]);
 
       setDelegates(delegateRes.data);
@@ -54,7 +54,7 @@ export default function AdminDashboard() {
   const updateDelegateStatus = async (id, status) => {
     const toastId = toast.loading("Updating...");
     try {
-      await axios.put(`https://nexus-summit-link.onrender.com/api/delegate/${id}`, { status }, { headers: authHeader });
+      await axios.put(`http://localhost:5000/api/delegate/${id}`, { status }, { headers: authHeader });
       toast.success(`Delegate ${status}`, { id: toastId });
       fetchDashboardData();
     } catch {
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
   const updateExhibitorStatus = async (id, status) => {
     const toastId = toast.loading("Updating...");
     try {
-      await axios.put(`https://nexus-summit-link.onrender.com/api/exhibitor/${id}`, { status }, { headers: authHeader });
+      await axios.put(`http://localhost:5000/api/exhibitor/${id}`, { status }, { headers: authHeader });
       toast.success(`Exhibitor ${status}`, { id: toastId });
       fetchDashboardData();
     } catch {
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
   const updateSponsorStatus = async (id, status) => {
     const toastId = toast.loading("Updating...");
     try {
-      await axios.put(`https://nexus-summit-link.onrender.com/api/sponsor/${id}`, { status }, { headers: authHeader });
+      await axios.put(`http://localhost:5000/api/sponsor/${id}`, { status }, { headers: authHeader });
       toast.success(`Sponsor ${status}`, { id: toastId });
       fetchDashboardData();
     } catch {
