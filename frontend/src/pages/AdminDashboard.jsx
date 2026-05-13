@@ -30,7 +30,7 @@ export default function AdminDashboard() {
     try {
       const [delegateRes, exhibitorRes, sponsorRes, paymentRes] =
         await Promise.all([
-          axios.get("http://localhost:5000/api/delegate",     { headers: authHeader }),
+          axios.get("http://localhost:5000/api/Delegate",     { headers: authHeader }),
           axios.get("http://localhost:5000/api/exhibitor",    { headers: authHeader }),
           axios.get("http://localhost:5000/api/sponsor",      { headers: authHeader }),
           axios.get("http://localhost:5000/api/payment/stats",{ headers: authHeader }),
